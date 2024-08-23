@@ -23,4 +23,12 @@ class Setting extends Model
     {
         return $this->hasMany(Summary::class);
     }
+    
+    protected $fillable = [
+    'selfname',
+    'selfimage',
+    'partnername',
+    'partnerimage',
+    'user_id',
+    ];
 }

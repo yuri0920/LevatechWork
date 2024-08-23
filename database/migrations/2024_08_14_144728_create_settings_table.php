@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('selfname', 20);
-            $table->string('selfimage', 50);
+            $table->string('selfimage', 50)->nullable();
             $table->string('partnername', 20);
-            $table->string('partnerimage', 50);
+            $table->string('partnerimage', 50)->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -21,6 +21,10 @@ class Talk extends Model
     
     public function summary()
     {
-        return $this->hasOne(Summary::class);
+        return $this->hasMany(Summary::class);
     }
+    
+    protected $fillable = [
+        'contents',
+        ];
 }

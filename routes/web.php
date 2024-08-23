@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TalkController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home',[HomeController::class, 'index']);
+Route::get('/create', [SettingController::class, 'create']);
+Route::get('/talk', [TalkController::class, 'talk']);
+Route::post('/talks', [TalkController::class, 'store']);
+Route::get('/talk', [TalkController::class, 'talk']) -> name('talk');
+Route::post('/settings', [SettingController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

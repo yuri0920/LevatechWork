@@ -26,9 +26,9 @@ class Setting extends Model
     
     protected $fillable = [
     'selfname',
-    'selfimage',
+    'selfimage_url',
     'partnername',
-    'partnerimage',
+    'partnerimage_url',
     'user_id',
     ];
 }

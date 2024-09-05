@@ -24,10 +24,10 @@ Route::get('/', function () {
 
 Route::get('/home',[HomeController::class, 'index']);
 Route::get('/create', [SettingController::class, 'create']);
-Route::get('/talk', [TalkController::class, 'talk']);
-Route::post('/talks', [TalkController::class, 'store']);
-Route::get('/talk', [TalkController::class, 'talk']) -> name('talk');
+Route::post('/talk/{setting}', [TalkController::class, 'store']);
+Route::get('/talk/{setting}', [TalkController::class, 'talk'])->name('talkroom');
 Route::post('/settings', [SettingController::class, 'store']);
+Route::get('/talk', [TalkController::class, 'roomselect'])-> name('talk');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

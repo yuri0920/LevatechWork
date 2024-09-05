@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('talks', function (Blueprint $table) {
             $table->id();
-            $table->string('contents', 200);
             $table->integer('role');
+            $table->string('contents', 200);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('setting_id')->constrained()->onDelete('cascade');
             $table->timestamps();

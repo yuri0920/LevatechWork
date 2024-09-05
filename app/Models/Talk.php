@@ -26,5 +26,7 @@ class Talk extends Model
     
     protected $fillable = [
         'contents',
+        'user_id',
+        'settig_id'
         ];
 }

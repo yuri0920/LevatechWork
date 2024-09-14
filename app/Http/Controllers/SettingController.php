@@ -24,6 +24,6 @@ class SettingController extends Controller
         $input += ['selfimage_url'=>$selfimage_url];
         $input += ['partnerimage_url' => $partnerimage_url];
         $setting->fill($input)->save();
-        return redirect('/talks');
+        return redirect('/talk');
     }
 }
